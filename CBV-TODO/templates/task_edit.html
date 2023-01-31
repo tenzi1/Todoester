@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block title%}
+Edit Task
+{% endblock title%}
+
+{% block content %}
+<h2>Edit your Task</h2>
+<div class="form-group">
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <input class="btn btn-outline-dark" type="submit" value="Edit task">
+    </form>
+</div>
+{% endblock content %}

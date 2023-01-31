@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Todo List
+{% endblock title %}
+
+{% block content %}
+<h1>List of Tasks</h1>
+ 
+
+    <table>
+        <tr>
+            <th>Task</th>
+            <th></th>
+        
+        </tr>
+        {% for todo in todo_list %}
+        <tr>
+            <td>{{ todo.task }}</td>
+           
+          <td>
+            <a href="{% url 'task_detail' todo.pk %}" class="btn btn-outline-dark">Detail</a>
+            </td>
+           
+        </tr>
+        {% endfor %}
+        
+    </table>
+{% endblock %}

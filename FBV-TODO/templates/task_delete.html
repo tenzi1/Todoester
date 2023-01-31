@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{%block  title %}
+Delete Task
+{% endblock title %}
+
+{% block content %}
+    <div class="delete-container">
+    <p>Are you sure to delete task: <b>{{ todo.task }} ?</b></p>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input class="delete-btn btn" type="submit" value="Delete">
+    </form>
+    </div>
+{% endblock %}

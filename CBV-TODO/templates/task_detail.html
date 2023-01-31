@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Todo List
+{% endblock title %}
+
+{% block content %}
+<h1>Current Task</h1>
+
+
+<table>
+    <tr>
+        <th>Task</th>
+        <th>Complete By</th>
+        <th></th>
+        <th></th>
+
+    </tr>
+
+    <tr>
+        <td>{{ todo.task }}</td>
+        <td>{{ todo.complete_by}}</td>
+
+        <td>
+            <a href="{% url 'task_edit' todo.pk %}" class="btn btn-outline-dark">Edit</a>
+        </td>
+        <td>
+            <a href="{% url 'task_delete' todo.pk %}" class="btn btn-outline-danger ">Delete</a>
+        </td>
+    </tr>
+
+
+</table>
+{% endblock %}
